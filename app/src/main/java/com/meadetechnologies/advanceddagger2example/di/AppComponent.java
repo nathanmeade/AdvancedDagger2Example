@@ -2,7 +2,6 @@ package com.meadetechnologies.advanceddagger2example.di;
 
 import android.app.Application;
 
-import com.meadetechnologies.advanceddagger2example.AuthActivity;
 import com.meadetechnologies.advanceddagger2example.BaseApplication;
 
 import javax.inject.Singleton;
@@ -13,7 +12,7 @@ import dagger.android.AndroidInjector;
 import dagger.android.support.AndroidSupportInjectionModule;
 
 @Singleton
-@Component(modules = {AndroidSupportInjectionModule.class, ActivityBuildersModule.class, AppModule.class,})
+@Component(modules = {AndroidSupportInjectionModule.class, ActivityBuildersModule.class, AppModule.class, ViewModelFactoryModule.class,})
 public interface AppComponent extends AndroidInjector<BaseApplication> {
 
     @Component.Builder
