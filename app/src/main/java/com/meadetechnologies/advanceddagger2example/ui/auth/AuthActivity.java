@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -19,6 +20,7 @@ import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.request.RequestOptions;
 import com.meadetechnologies.advanceddagger2example.R;
 import com.meadetechnologies.advanceddagger2example.models.User;
+import com.meadetechnologies.advanceddagger2example.ui.main.MainActivity;
 import com.meadetechnologies.advanceddagger2example.viewmodels.ViewModelProviderFactory;
 
 import javax.inject.Inject;
@@ -76,6 +78,7 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
                         case AUTHENTICATED:{
                             showProgressBar(false);
                             Log.d(TAG, "onChanged: LOGIN SUCCESS: " + userAuthResource.data.getEmail());
+                            onLoginSuccess();
                         break;}
                         case ERROR:{
                             Log.d(TAG, "onChanged: " + userAuthResource.message);
@@ -103,6 +106,12 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
     private void setLogo(){
         ImageView imageView = findViewById(R.id.login_logo);
         glideInstance.load(appDrawable).into(imageView);
+    }
+
+    private void onLoginSuccess(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override
