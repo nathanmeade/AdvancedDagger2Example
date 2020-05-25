@@ -3,6 +3,7 @@ package com.meadetechnologies.advanceddagger2example.di;
 import com.meadetechnologies.advanceddagger2example.di.auth.AuthModule;
 import com.meadetechnologies.advanceddagger2example.di.auth.AuthViewModelsModule;
 import com.meadetechnologies.advanceddagger2example.di.main.MainFragmentBuildersModule;
+import com.meadetechnologies.advanceddagger2example.di.main.MainViewModelsModule;
 import com.meadetechnologies.advanceddagger2example.ui.auth.AuthActivity;
 import com.meadetechnologies.advanceddagger2example.ui.main.MainActivity;
 
@@ -18,7 +19,7 @@ public abstract class ActivityBuildersModule {
     abstract AuthActivity contributeAuthActivity();
 
     @ContributesAndroidInjector(
-            modules = {MainFragmentBuildersModule.class}
+            modules = {MainFragmentBuildersModule.class, MainViewModelsModule.class}
     )
     abstract MainActivity contributeMainActivity();
 }

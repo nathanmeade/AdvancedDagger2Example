@@ -12,10 +12,15 @@ import com.meadetechnologies.advanceddagger2example.BaseActivity;
 import com.meadetechnologies.advanceddagger2example.R;
 import com.meadetechnologies.advanceddagger2example.SessionManager;
 import com.meadetechnologies.advanceddagger2example.ui.main.profile.ProfileFragment;
+import com.meadetechnologies.advanceddagger2example.viewmodels.ViewModelProviderFactory;
+
+import javax.inject.Inject;
 
 public class MainActivity extends BaseActivity {
 
     private static final String TAG = "MainActivity";
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,6 +30,7 @@ public class MainActivity extends BaseActivity {
         Toast.makeText(this, "mainactivity", Toast.LENGTH_SHORT).show();
 
         testFragment();
+
     }
 
     private void testFragment(){
