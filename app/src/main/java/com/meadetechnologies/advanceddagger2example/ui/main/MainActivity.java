@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import com.meadetechnologies.advanceddagger2example.BaseActivity;
 import com.meadetechnologies.advanceddagger2example.R;
 import com.meadetechnologies.advanceddagger2example.SessionManager;
+import com.meadetechnologies.advanceddagger2example.ui.main.profile.ProfileFragment;
 
 public class MainActivity extends BaseActivity {
 
@@ -22,6 +23,12 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
 
         Toast.makeText(this, "mainactivity", Toast.LENGTH_SHORT).show();
+
+        testFragment();
+    }
+
+    private void testFragment(){
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new ProfileFragment()).commit();
     }
 
     @Override
