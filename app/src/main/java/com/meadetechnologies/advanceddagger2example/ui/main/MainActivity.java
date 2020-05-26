@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import com.meadetechnologies.advanceddagger2example.BaseActivity;
 import com.meadetechnologies.advanceddagger2example.R;
 import com.meadetechnologies.advanceddagger2example.SessionManager;
+import com.meadetechnologies.advanceddagger2example.ui.main.posts.PostsFragment;
 import com.meadetechnologies.advanceddagger2example.ui.main.profile.ProfileFragment;
 import com.meadetechnologies.advanceddagger2example.viewmodels.ViewModelProviderFactory;
 
@@ -34,7 +35,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void testFragment(){
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new ProfileFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new PostsFragment()).commit();
     }
 
     @Override
